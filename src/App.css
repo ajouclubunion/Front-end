@@ -1,11 +1,11 @@
 .book-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #e0e0e0;
   position: relative;
-  flex-direction: column;
 }
 
 .demoPage {
@@ -22,34 +22,41 @@
   object-fit: cover;
 }
 
-.arrow-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
+.bottom-bar {
+  width: 100%;
+  display: flex;
+  position: fixed; /* 화면에 고정 */
+  bottom: 0;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* 다른 요소보다 위에 보이도록 설정 */
+  pointer-events: auto; /* 버튼이 클릭 가능하도록 설정 */
+}
+
+.bottom-bar-left,
+.bottom-bar-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  font-size: 24px;
-  z-index: 10;
-  border-radius: 50%; /* 버튼을 둥글게 만듭니다 */
+  border: 1px solid black; /* 검은색 외곽선 추가 */
+  background-color: rgba(255, 255, 255, 0.8); /* 겹칠 때도 잘 보이도록 배경색 설정 */
 }
 
-.arrow-button.left {
-  left: 10px;
+.bottom-bar-left {
+  border-right: none; /* 좌우 분할을 위해 오른쪽 외곽선을 제거 */
 }
 
-.arrow-button.right {
-  right: 10px;
-}
-
-.arrow-button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+.bottom-bar-left:hover,
+.bottom-bar-right:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: bold; /* 호버 시 글자 굵게 */
+  font-size: 1.2em; /* 호버 시 글자 크기 증가 */
 }
 
 .page-controls {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   font-size: 16px;

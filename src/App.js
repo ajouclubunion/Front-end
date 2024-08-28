@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import './App.css';
 
@@ -6,9 +6,20 @@ const images = Array.from({ length: 76 }, (_, i) => `/images/pamphlet_${i + 1}.j
 
 function FlipBook() {
   const flipBookRef = useRef(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   const [inputPage, setInputPage] = useState('1');
+  const [isMobile, setIsMobile] = useState(false);
   const totalPages = images.length;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // 768px 이하일 경우 모바일로 간주
+    };
+
+    handleResize(); // 초기 렌더링 시에도 호출
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleNextPage = () => {
     if (flipBookRef.current) {
@@ -23,9 +34,9 @@ function FlipBook() {
   };
 
   const onPageChange = (e) => {
-    const newPage = e.data + 1; // 페이지 인덱스는 0부터 시작하므로 1을 더해줌
+    const newPage = e.data; // 페이지 인덱스는 0부터 시작
     setCurrentPage(newPage);
-    setInputPage(newPage.toString());
+    setInputPage((newPage + 1).toString()); // 페이지 번호를 1부터 시작하도록 표시
   };
 
   const handlePageInputChange = (e) => {
@@ -37,28 +48,25 @@ function FlipBook() {
     const pageNum = parseInt(inputPage, 10);
     if (!isNaN(pageNum) && pageNum > 0 && pageNum <= totalPages) {
       if (flipBookRef.current) {
-        flipBookRef.current.pageFlip().turnToPage(pageNum - 1); // 페이지 넘김 애니메이션 없이 바로 이동
-        setCurrentPage(pageNum);
-        setInputPage(pageNum.toString());
+        flipBookRef.current.pageFlip().turnToPage(pageNum - 1);
+        setCurrentPage(pageNum - 1);
       }
     } else {
       alert(`Please enter a number between 1 and ${totalPages}`);
-      setInputPage(currentPage.toString());
+      setInputPage((currentPage + 1).toString());
     }
   };
 
   return (
     <div className="book-container">
-      <button className="arrow-button left" onClick={handlePrevPage}>
-        &lt;
-      </button>
       <HTMLFlipBook
-        width={400}
-        height={600}
+        width={isMobile ? 300 : 400}
+        height={isMobile ? 450 : 600}
         showCover={true}
         ref={flipBookRef}
         onFlip={onPageChange}
-        disableFlipByClick // 클릭에 의한 페이지 넘김 비활성화
+        disableFlipByClick
+        display={isMobile ? 'single' : 'double'} // 모바일에서는 single로 표시
       >
         {images.map((image, index) => (
           <div key={index} className="demoPage">
@@ -66,9 +74,16 @@ function FlipBook() {
           </div>
         ))}
       </HTMLFlipBook>
-      <button className="arrow-button right" onClick={handleNextPage}>
-        &gt;
-      </button>
+
+      <div className="bottom-bar">
+        <div className="bottom-bar-left" onClick={handlePrevPage}>
+          &lt;
+        </div>
+        <div className="bottom-bar-right" onClick={handleNextPage}>
+          &gt;
+        </div>
+      </div>
+
       <div className="page-controls">
         <form onSubmit={handlePageInputSubmit}>
           <label>

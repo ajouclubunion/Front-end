@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "아주대학교 동아리연합회",
+  "name": "아주대학교 동아리연합회 동아리 소개집",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "donghwa.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "icon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "large-icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -21,5 +21,7 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "링크를 눌러 동아리 소개집을 확인하세요"
 }
+
