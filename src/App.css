@@ -1,84 +1,90 @@
-.book-container {
+.flipbook-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
-  background-color: #e0e0e0;
-  position: relative;
+  padding: 20px;
 }
 
-.demoPage {
-  width: 100%;
-  height: 100%;
+.flipbook {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.page {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.demoPage img {
+.page img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* 이미지가 flipbook 크기에 맞게 조정됨 */
 }
 
-.bottom-bar {
-  width: 100%;
+.navigation {
   display: flex;
-  position: fixed; /* 화면에 고정 */
-  bottom: 0;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* 다른 요소보다 위에 보이도록 설정 */
-  pointer-events: auto; /* 버튼이 클릭 가능하도록 설정 */
-}
-
-.bottom-bar-left,
-.bottom-bar-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  border: 1px solid black; /* 검은색 외곽선 추가 */
-  background-color: rgba(255, 255, 255, 0.8); /* 겹칠 때도 잘 보이도록 배경색 설정 */
 }
 
-.bottom-bar-left {
-  border-right: none; /* 좌우 분할을 위해 오른쪽 외곽선을 제거 */
+.nav-button:hover {
+  background-color: #0056b3;
 }
 
-.bottom-bar-left:hover,
-.bottom-bar-right:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  font-weight: bold; /* 호버 시 글자 굵게 */
-  font-size: 1.2em; /* 호버 시 글자 크기 증가 */
-}
-
-.page-controls {
-  margin-top: 10px;
+.page-info {
   display: flex;
   align-items: center;
-  font-size: 16px;
-  color: #333;
+  gap: 5px;
 }
 
 .page-input {
   width: 50px;
-  margin: 0 5px;
+  padding: 5px;
   text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .go-button {
   padding: 5px 10px;
-  margin-left: 10px;
-  background-color: #007bff;
+  background-color: #28a745;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 4px;
 }
 
 .go-button:hover {
-  background-color: #0056b3;
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  .flipbook-container {
+    padding: 10px;
+  }
+
+  .flipbook {
+    max-width: 100%;
+    max-height: 90vh;
+  }
+
+  .nav-button, .go-button {
+    padding: 5px 10px;
+  }
+
+  .page-info {
+    font-size: 14px;
+  }
 }
