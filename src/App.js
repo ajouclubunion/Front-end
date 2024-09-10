@@ -59,7 +59,7 @@ const App = () => {
         maxWidth={600}
         minHeight={300}
         maxHeight={1000}
-        showCover={false}
+        showCover={true}
         mobileScrollSupport={true}
         onFlip={handlePageChange}
         ref={flipBookRef}
