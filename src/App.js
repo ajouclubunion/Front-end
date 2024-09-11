@@ -52,18 +52,19 @@ const App = () => {
   return (
     <div className="flipbook-container">
       <HTMLFlipBook
-        width={isMobile ? 300 : 300} // 모바일과 웹 크기 설정 (동일 크기)
-        height={isMobile ? 424 : 424}
+        width={isMobile ? 300 : 250} // 모바일 크기는 유지하고, 웹 크기를 줄임
+        height={isMobile ? 424 : 354} // 웹 크기 비율에 맞게 줄임
         size="stretch"
         minWidth={200}
-        maxWidth={600}
-        minHeight={300}
-        maxHeight={1000}
+        maxWidth={500}
+        minHeight={250}
+        maxHeight={800}
         showCover={true}
         mobileScrollSupport={true}
         onFlip={handlePageChange}
         ref={flipBookRef}
         className="flipbook"
+        singlePage={isMobile} // 모바일에서는 single page 모드 활성화
       >
         {images.map((image, index) => (
           <div className="page" key={index}>
