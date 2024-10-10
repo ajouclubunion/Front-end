@@ -1,6 +1,6 @@
 {
-  "short_name": "아주대학교 동아리연합회",
-  "name": "아주대학교 동아리 소개집",
+  "short_name": "아주대학교 제 40대 동아리연합회",
+  "name": "아주대학교 제 40대 동아리연합회",
   "icons": [
     {
       "src": "donghwa.ico",
@@ -22,6 +22,6 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "description": "링크를 눌러 동아리 소개집을 확인하세요"
+  "description": "여기를 눌러 링크를 확인하세요"
 }
 

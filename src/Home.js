@@ -11,7 +11,7 @@ const Home = () => {
         alt="Donghwa Logo"
         className="home-big-logo"
       />
-      <h1 className="home-text">아주대학교 제 40대 동아리연합회 동화입니다</h1>
+      <h1 className="home-text">아주대학교 제 40대 동아리연합회 동화</h1>
 
       <div className="image-row">
         {/* 물품 대여사업 링크 */}

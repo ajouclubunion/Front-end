@@ -55,7 +55,7 @@ body, html {
   color: white;
   font-size: 30px;
   cursor: pointer;
-  margin-right: 20px; /* 기본적으로 웹(데스크톱)에서는 margin-right: 20px 적용 */
+  margin-right: 30px; /* 기본적으로 웹(데스크톱)에서는 margin-right: 20px 적용 */
 }
 
 /* 모바일 환경에서 margin-right 제거 */
@@ -213,7 +213,7 @@ body, html {
 
 .header-logo {
   height: 40px; /* 로고 크기 */
-  margin-right: 10px; /* 텍스트와의 간격 */
+  margin-right: 0px; /* 텍스트와의 간격 */
 }
 
 .header-text {
