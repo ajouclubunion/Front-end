@@ -15,7 +15,7 @@ const Home = () => {
 
       <div className="image-row">
         {/* 물품 대여사업 링크 */}
-        <div className="image-item">
+        {/* <div className="image-item">
           <a href="https://sites.google.com/ajou.ac.kr/donghwa-rent/qa?authuser=0" target="_blank" rel="noopener noreferrer">
             <img
               src="/images/donghwa_rental.jpg"
@@ -24,7 +24,7 @@ const Home = () => {
             />
           </a>
           <p className="image-description">물품 대여사업</p>
-        </div>
+        </div> */}
 
         {/* 동아리 소개집 페이지로 이동 */}
         <div className="image-item">
