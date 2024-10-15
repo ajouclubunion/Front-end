@@ -45,7 +45,7 @@ body, html {
   font-weight: bold; /* 볼드체 */
   font-size: 22px; /* 텍스트 크기 */
   margin-left: 10px;
-  font-family: 'Arial', sans-serif; /* 폰트 */
+  font-family: 'Pretendard'; /* 폰트 */
 }
 
 /* 햄버거 버튼 스타일 */
@@ -93,8 +93,6 @@ body, html {
   background-color: #f1f1f1;
 }
 
-
-
 /* Home 페이지 스타일 설정 */
 
 .home-container {
@@ -116,7 +114,7 @@ body, html {
   font-size: 24px; /* 텍스트 크기 */
   font-weight: bold;
   color: #333;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Pretendard';
   margin-bottom: 20px;
 }
 
@@ -160,6 +158,7 @@ body, html {
 
   .home-text {
     font-size: 16px; /* 모바일 화면에서 텍스트 크기 조정 */
+    font-family: 'Pretendard';
   }
 
   .image-row {
@@ -189,6 +188,7 @@ body, html {
 
   .home-text {
     font-size: 18px; /* 더 작은 화면에서 텍스트 크기 조정 */
+    font-family: 'Pretendard';
   }
 }
 
@@ -221,7 +221,7 @@ body, html {
   font-weight: bold; /* 볼드체 */
   font-size: 22px; /* 텍스트 크기 */
   margin-left: 10px;
-  font-family: 'Arial', sans-serif; /* 폰트 */
+  font-family: 'Pretendard';
 }
 
 .home-container {
@@ -242,7 +242,7 @@ body, html {
   font-size: 24px;
   font-weight: bold;
   color: #333;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Pretendard';
 }
 
 .flipbook-container {

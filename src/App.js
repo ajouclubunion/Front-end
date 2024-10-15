@@ -4,6 +4,7 @@ import Home from './Home';
 import Calendar from './Calendar';
 import Pamphlet from './Pamphlet';
 import './App.css';
+import "./fonts/font.css";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false); // 메뉴 상태 (열림/닫힘)
@@ -31,9 +32,9 @@ const Header = () => {
       {/* 메뉴 - 메뉴 상태에 따라 표시 여부 결정 */}
       {menuOpen && (
         <div className="dropdown-menu">
-          <Link to="https://sites.google.com/ajou.ac.kr/donghwa-rent/qa?authuser=0" className="dropdown-link" target="_blank" rel="noopener noreferrer">
+          {/* <Link to="https://sites.google.com/ajou.ac.kr/donghwa-rent/qa?authuser=0" className="dropdown-link" target="_blank" rel="noopener noreferrer">
             대여사업
-          </Link>
+          </Link> */}
           <Link to="/calendar" className="dropdown-link">
             캘린더
           </Link>
