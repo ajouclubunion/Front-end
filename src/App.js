@@ -21,7 +21,7 @@ const Header = () => {
           alt="Donghwa Logo"
           className="header-logo"
         />
-        <span className="header-text">아주대학교 제 40대 동아리연합회</span>
+        <span className="header-text">아주대학교 제40대 동아리연합회</span>
       </Link>
 
       {/* 햄버거 버튼 */}
