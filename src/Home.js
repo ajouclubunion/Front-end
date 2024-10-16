@@ -11,19 +11,19 @@ const Home = () => {
         alt="Donghwa Logo"
         className="home-big-logo"
       />
-      <h1 className="home-text">아주대학교 제 40대 동아리연합회 동화</h1>
+      <h1 className="home-text">아주대학교 제40대 동아리연합회 동화</h1>
 
       <div className="image-row">
-        {/* 물품 대여사업 링크 */}
+        {/* 동연 아주대 홈페이지 */}
         {/* <div className="image-item">
-          <a href="https://sites.google.com/ajou.ac.kr/donghwa-rent/qa?authuser=0" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.ajou.ac.kr/kr/life/ajouclub.do" target="_blank" rel="noopener noreferrer">
             <img
-              src="/images/donghwa_rental.jpg"
+              src="/images/dhdh.png"
               alt="Donghwa Rental"
               className="row-image"
             />
           </a>
-          <p className="image-description">물품 대여사업</p>
+          <p className="image-description">동아리연합회 홈페이지</p>
         </div> */}
 
         {/* 동아리 소개집 페이지로 이동 */}
